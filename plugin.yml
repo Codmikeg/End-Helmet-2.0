@@ -1,0 +1,9 @@
+name: End is Space 2.0
+main: me.Codmikeg.endHelmetTwo.endHelmetMain
+version: 1.0
+author: Codmikeg
+description: >
+             End is now Space!. 2.0
+commands:
+  debugger:
+    description: To apply your Space Helmet!
