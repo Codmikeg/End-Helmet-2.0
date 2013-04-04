@@ -7,5 +7,4 @@ public class endHelmetListener implements Listener{
 	public endHelmetListener(endHelmetMain plugin){
 		this.plugin = plugin;
 	}
-
 }
