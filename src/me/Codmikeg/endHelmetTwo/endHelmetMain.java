@@ -12,6 +12,7 @@ public class endHelmetMain extends JavaPlugin {
 	public void onEnable(){
 		getServer().getPluginManager().registerEvents(new endHelmetListener(this), this);
 		getCommand("debugger").setExecutor(new endHelmetCommandExecutor(this));
+		getCommand("debugstop").setExecutor(new endHelmetCommandExecutor(this));
 		
 		
 	}

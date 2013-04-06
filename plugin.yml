@@ -6,4 +6,6 @@ description: >
              End is now Space!. 2.0
 commands:
   debugger:
-    description: To apply your Space Helmet!
+    description: startdebug
+  debugstop:
+    description: stopdebug

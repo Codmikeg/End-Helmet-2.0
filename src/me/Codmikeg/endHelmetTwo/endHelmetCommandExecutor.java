@@ -9,7 +9,8 @@ import org.bukkit.entity.Player;
 
 public class endHelmetCommandExecutor implements CommandExecutor {
 	endHelmetMain plugin;
-	int i = 0;
+	endHelmetDamager dm = new endHelmetDamager(plugin);
+	testDamage d = new testDamage(plugin);
 	
 	public endHelmetCommandExecutor(endHelmetMain plugin){
 		this.plugin = plugin;
@@ -20,8 +21,18 @@ public class endHelmetCommandExecutor implements CommandExecutor {
 		if(commandLabel.equalsIgnoreCase("debugger")){
 			if(sender instanceof Player){
 				Player player = (Player)sender;
-				dealDamage(player);
-				player.sendMessage(i + "");
+				//dm.dealDamage(player);
+				d.dealD(player);
+			}
+			else{
+				plugin.log.warning("You must be a player!");
+			}
+			
+		}
+		if(commandLabel.equalsIgnoreCase("debugstop")){
+			if(sender instanceof Player){
+				//Player player = (Player)sender;
+				dm.stopDamage();
 			}
 			else{
 				plugin.log.warning("You must be a player!");
@@ -38,7 +49,6 @@ public class endHelmetCommandExecutor implements CommandExecutor {
 				int h = player.getHealth();
 				if(player.isDead() == true){
 					Bukkit.getScheduler().cancelAllTasks();
-					i = 1;
 				}
 				else{
 					player.setHealth(h - 2);
@@ -48,4 +58,5 @@ public class endHelmetCommandExecutor implements CommandExecutor {
 			}
 		}, 5, 20);
 	}
+	
 }
