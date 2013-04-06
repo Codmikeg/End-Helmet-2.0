@@ -5,7 +5,7 @@ import java.util.logging.Logger;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class endHelmetMain extends JavaPlugin {
-	public final Logger log = Logger.getLogger("Minecraft");
+	public final Logger log = this.getLogger();
 
 
 	@Override
